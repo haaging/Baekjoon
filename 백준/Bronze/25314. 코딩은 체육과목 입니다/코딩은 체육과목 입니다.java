@@ -1,30 +1,20 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Main
 {
 	static int count0, count1;
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
-		Scanner sc = new Scanner(System.in);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
 		
-		int n = sc.nextInt();
-		StringBuffer str = new StringBuffer();
+		int N = Integer.parseInt(br.readLine());
 		
-		if (n%4!=0)
-		{
-			n = sc.nextInt();
-		}
+		for (int i = 0; i < N/4; i++)
+			sb.append("long ");
 		
-		for (int i = 0; i < n/4; i++)
-		{
-			str.append("long ");
-		}
-		
-		str.append("int");
-		System.out.println(str);
-		
-		sc.close();
+		System.out.println(sb.append("int").toString());
 	}
 	
 }
