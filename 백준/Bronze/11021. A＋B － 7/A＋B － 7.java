@@ -7,21 +7,20 @@ public class Main
 	{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		
+		StringBuilder sb = new StringBuilder();
 		int T = Integer.parseInt(br.readLine());	// 테스트 케이스
 		
 		StringTokenizer st;
-		int i=1;
 		
-		while(T>0)
+		for(int i=1; i<=T; i++)
 		{
 			st = new StringTokenizer(br.readLine());
 			int a = Integer.parseInt(st.nextToken());
 			int b = Integer.parseInt(st.nextToken());
-			bw.write("Case #" + i + ": " + (a+b) + "\n");
-			i++;
-			T--;
+			sb.append("Case #").append(i).append(": ").append(a+b).append("\n");
 		}
+		
+		bw.write(sb.toString());
 		
 		br.close();
 		bw.flush();
