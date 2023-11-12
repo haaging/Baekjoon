@@ -12,16 +12,14 @@ public class Main
 		int N = Integer.parseInt(st.nextToken());
 		int X = Integer.parseInt(st.nextToken());
 		
-		int[] arr = new int[N];
 		
 		st = new StringTokenizer(br.readLine());
 		
-		for (int i = 0; i < arr.length; i++)
+		for (int i = 0; i < N; i++)
 		{
-			arr[i] = Integer.parseInt(st.nextToken());
-			
-			if(arr[i] < X)
-				sb.append(arr[i]).append(" ");
+			int value = Integer.parseInt(st.nextToken());
+			if(value < X)
+				sb.append(value).append(" ");
 		}
 		
 		System.out.println(sb);
