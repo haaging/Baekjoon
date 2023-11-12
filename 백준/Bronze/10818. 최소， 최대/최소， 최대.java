@@ -7,19 +7,23 @@ public class Main
 	public static void main(String[] args) throws IOException
 	{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
 		StringTokenizer st;
 		
 		int N = Integer.parseInt(br.readLine());
-		int[] arr = new int[N];
 		
 		st = new StringTokenizer(br.readLine());
+		int max = -1000001, min = 1000001;
 		for (int i = 0; i < N; i++)
 		{
-			arr[i] = Integer.parseInt(st.nextToken());
+			int value = Integer.parseInt(st.nextToken());
+			if(value < min)
+				min = value;
+			if(value > max)
+				max = value;
 		}
 		
-		Arrays.sort(arr);
-		System.out.println(arr[0] + " " + arr[N-1]);
+		System.out.println(min + " " + max);
 		
 		br.close();
 	}
